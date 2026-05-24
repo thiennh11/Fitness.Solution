@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Fitness Dashboard</title>
+
+    <!-- FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- ICON -->
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="../css/dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div id="sidebar" class="sidebar"></div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="main-content">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <h1 id="dashboardTitle">
+                Dashboard
+            </h1>
+
+            <div class="user">
+
+                <span class="material-icons">
+                    account_circle
+                </span>
+
+                <p id="userName">
+                    Loading...
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- USER CARDS -->
+
+        <div class="cards"
+             id="userCards">
+
+            <!-- CALORIES -->
+
+            <div class="card">
+
+                <div>
+
+                    <h3>Calories</h3>
+
+                    <p id="totalCalories">
+                        Loading...
+                    </p>
+
+                </div>
+
+                <span class="material-icons green">
+                    local_fire_department
+                </span>
+
+            </div>
+
+            <!-- WORKOUT -->
+
+            <div class="card">
+
+                <div>
+
+                    <h3>Workout</h3>
+
+                    <p id="totalWorkout">
+                        Loading...
+                    </p>
+
+                </div>
+
+                <span class="material-icons blue">
+                    directions_run
+                </span>
+
+            </div>
+
+            <!-- BMI -->
+
+            <div class="card">
+
+                <div>
+
+                    <h3>BMI</h3>
+
+                    <p id="bmiValue">
+                        Loading...
+                    </p>
+
+                </div>
+
+                <span class="material-icons orange">
+                    monitor_weight
+                </span>
+
+            </div>
+
+            <!-- MEALS -->
+
+            <div class="card">
+
+                <div>
+
+                    <h3>Meals</h3>
+
+                    <p id="mealCount">
+                        Loading...
+                    </p>
+
+                </div>
+
+                <span class="material-icons purple">
+                    restaurant
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- USER CHARTS -->
+
+        <div id="userCharts">
+
+            <div class="charts-container">
+
+                <!-- CALORIE CHART -->
+
+                <div class="chart-card">
+
+                    <h3>
+                        Calories Intake
+                    </h3>
+
+                    <canvas id="calorieChart">
+                    </canvas>
+
+                </div>
+
+                <!-- WORKOUT CHART -->
+
+                <div class="chart-card">
+
+                    <h3>
+                        Workout Activity
+                    </h3>
+
+                    <canvas id="userWorkoutChart">
+                    </canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ADMIN SECTION -->
+
+        <div id="adminSection"
+             style="display:none; margin-top:40px;">
+
+            <h2 style="margin-bottom:20px;">
+
+                Admin Statistics
+
+            </h2>
+
+            <!-- ADMIN CARDS -->
+
+            <div class="cards">
+
+                <!-- TOTAL USERS -->
+
+                <div class="card">
+
+                    <div>
+
+                        <h3>Total Users</h3>
+
+                        <p id="totalUsers">
+                            Loading...
+                        </p>
+
+                    </div>
+
+                    <span class="material-icons green">
+                        group
+                    </span>
+
+                </div>
+
+                <!-- TOTAL MEAL PLANS -->
+
+                <div class="card">
+
+                    <div>
+
+                        <h3>Total Meal Plans</h3>
+
+                        <p id="totalMealPlans">
+                            Loading...
+                        </p>
+
+                    </div>
+
+                    <span class="material-icons blue">
+                        fastfood
+                    </span>
+
+                </div>
+
+                <!-- TOTAL WORKOUT PLANS -->
+
+                <div class="card">
+
+                    <div>
+
+                        <h3>Total Workout Plans</h3>
+
+                        <p id="totalWorkoutPlans">
+                            Loading...
+                        </p>
+
+                    </div>
+
+                    <span class="material-icons orange">
+                        directions_run
+                    </span>
+
+                </div>
+
+                <!-- AVERAGE BMI -->
+
+                <div class="card">
+
+                    <div>
+
+                        <h3>Average BMI</h3>
+
+                        <p id="averageBMI">
+                            Loading...
+                        </p>
+
+                    </div>
+
+                    <span class="material-icons purple">
+                        monitor_weight
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- ADMIN CHARTS -->
+
+            <div class="charts-container">
+
+                <!-- WORKOUT CHART -->
+
+                <div class="chart-card">
+
+                    <h3>
+                        Workout Activity
+                    </h3>
+
+                    <canvas id="workoutChart">
+                    </canvas>
+
+                </div>
+
+                <!-- BMI CHART -->
+
+                <div class="chart-card">
+
+                    <h3>
+                        BMI Distribution
+                    </h3>
+
+                    <canvas id="bmiChart">
+                    </canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CHART JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- JS -->
+
+    <script src="../js/common.js"></script>
+
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

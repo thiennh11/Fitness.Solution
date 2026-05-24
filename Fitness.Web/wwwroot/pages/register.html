@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Register</title>
+
+    <!-- FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- ICON -->
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="../css/register.css">
+
+</head>
+
+<body>
+
+    <!-- BLOBS -->
+
+    <div class="blob-top"></div>
+
+    <div class="blob-bottom"></div>
+
+    <!-- REGISTER CARD -->
+
+    <div class="register-card">
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <span class="material-icons">
+                fitness_center
+            </span>
+
+            <h1>Create Account</h1>
+
+            <p>
+                Join your fitness journey
+            </p>
+
+        </div>
+
+        <div class="form-grid">
+
+            <!-- FULL NAME -->
+
+            <div class="input-group">
+
+                <span class="material-icons">
+                    person
+                </span>
+
+                <input type="text"
+                       id="fullName"
+                       required>
+
+                <label>
+                    Full Name
+                </label>
+
+            </div>
+
+            <!-- EMAIL -->
+
+            <div class="input-group">
+
+                <span class="material-icons">
+                    email
+                </span>
+
+                <input type="email"
+                       id="email"
+                       required>
+
+                <label>
+                    Email
+                </label>
+
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="input-group">
+
+                <!-- LOCK ICON -->
+
+                <span class="material-icons">
+                    lock
+                </span>
+
+                <!-- INPUT -->
+
+                <input type="password"
+                       id="password"
+                       required>
+
+                <!-- LABEL -->
+
+                <label>
+                    Password
+                </label>
+
+                <!-- EYE ICON -->
+
+                <span class="material-icons toggle-password"
+                      onclick="togglePassword()">
+
+                    visibility
+
+                </span>
+
+            </div>
+
+            <!--GENDER-->
+
+            <div class="input-group">
+
+                <span class="material-icons">
+                    wc
+                </span>
+
+                <select id="gender">
+
+                    <option value="">
+                        Select Gender
+                    </option>
+
+                    <option value="Male">
+                        Male
+                    </option>
+
+                    <option value="Female">
+                        Female
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- WEIGHT -->
+
+            <div class="input-group">
+
+                <span class="material-icons">
+                    monitor_weight
+                </span>
+
+                <input type="number"
+                       id="weight"
+                       required>
+
+                <label>
+                    Weight (kg)
+                </label>
+
+            </div>
+
+            <!-- HEIGHT -->
+
+            <div class="input-group">
+
+                <span class="material-icons">
+                    height
+                </span>
+
+                <input type="number"
+                       id="height"
+                       required>
+
+                <label>
+                    Height (cm)
+                </label>
+
+            </div>
+
+            <!-- AGE -->
+
+            <div class="input-group">
+
+                <span class="material-icons">
+                    cake
+                </span>
+
+                <input type="number"
+                       id="age"
+                       required>
+
+                <label>
+                    Age
+                </label>
+
+            </div>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <button class="register-btn"
+                onclick="register()">
+
+            Register
+
+        </button>
+
+        <!-- LOGIN -->
+
+        <div class="login-link">
+
+            Already have an account?
+
+            <a href="../index.html">
+
+                Login
+
+            </a>
+
+        </div>
+
+        <!-- MESSAGE -->
+
+        <div id="messageBox">
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="../js/common.js"></script>
+    <script src="../js/register.js"></script>
+
+</body>
+
+</html>

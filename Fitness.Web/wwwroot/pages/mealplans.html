@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Plans</title>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/mealplans.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <div id="sidebar" class="sidebar"></div>
+    <!-- MAIN -->
+    <div class="main-content">
+
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <h1>Meal Plans</h1>
+            <button onclick="openModal()">Add Meal Plan</button>
+        </div>
+
+        <!-- TABLE -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Foods</th>
+                        <th>Total Calories</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="mealTableBody">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- ADD MODAL -->
+
+    <div id="mealModal"
+         class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>Add Meal Plan</h2>
+
+                <span class="material-icons close-btn"
+                      onclick="closeModal()">
+
+                    close
+
+                </span>
+
+            </div>
+
+            <!-- DATE -->
+
+            <input type="date"
+                   id="mealDate"
+                   required>
+
+            <!-- FOOD SELECT -->
+
+            <select id="foodSelect">
+            </select>
+
+            <!-- QUANTITY -->
+
+            <input type="number"
+                   id="foodQuantity"
+                   placeholder="Quantity"
+                   min="1"
+                   value="1">
+
+            <!-- ADD FOOD -->
+
+            <button class="add-food-btn"
+                    onclick="addMealItem()">
+
+                Add Food
+
+            </button>
+
+            <!-- FOOD TABLE -->
+
+            <div class="meal-items-table">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Food</th>
+
+                            <th>Quantity</th>
+
+                            <th>Calories</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="mealItemsBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- ACTIONS -->
+
+            <div class="modal-actions">
+
+                <button class="btn-cancel"
+                        onclick="closeModal()">
+
+                    Cancel
+
+                </button>
+
+                <button class="btn-save"
+                        onclick="saveMealPlan()">
+
+                    Save
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- DELETE MODAL -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Delete Meal Plan</h2>
+                <span class="material-icons close-btn" onclick="closeDeleteModal()">close</span>
+            </div>
+            <p>Are you sure you want to delete this meal plan?</p>
+            <input type="hidden" id="deleteMealId">
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="closeDeleteModal()">Cancel</button>
+                <button class="btn-delete" onclick="confirmDeleteMeal()">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="../js/common.js"></script>
+    <script src="../js/mealplans.js"></script>
+
+</body>
+</html>

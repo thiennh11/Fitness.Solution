@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Foods</title>
+
+    <!-- FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- ICON -->
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="../css/foods.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div id="sidebar" class="sidebar"></div>
+
+    <!-- MAIN -->
+
+    <div class="main-content">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <h1>Foods</h1>
+
+            <button id="addFoodBtn"
+                    onclick="openAddModal()">
+
+                Add Food
+
+            </button>
+
+        </div>
+        <div class="search-box">
+
+            <span class="material-icons">
+                search
+            </span>
+
+            <input type="text"
+                   id="foodSearch"
+                   placeholder="Search food..."
+                   onkeyup="searchFoods()">
+
+        </div>
+
+        <!-- TABLE -->
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Name</th>
+
+                        <th>Calories</th>
+
+                        <th>Protein</th>
+
+                        <th>Carbs</th>
+
+                        <th>Fat</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="foodTableBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- ADD MODAL -->
+
+    <div id="foodModal"
+         class="modal">
+
+        <div class="modal-content">
+
+            <h2>Add Food</h2>
+
+            <input type="text"
+                   id="foodName"
+                   placeholder="Food Name">
+
+            <input type="number"
+                   id="foodCalories"
+                   placeholder="Calories">
+
+            <input type="number"
+                   id="foodProtein"
+                   placeholder="Protein">
+
+            <input type="number"
+                   id="foodCarbs"
+                   placeholder="Carbs">
+
+            <input type="number"
+                   id="foodFat"
+                   placeholder="Fat">
+
+            <button onclick="addFood()">
+
+                Save
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- EDIT MODAL -->
+
+    <div id="editModal"
+         class="modal">
+
+        <div class="modal-content">
+
+            <h2>Edit Food</h2>
+
+            <input type="hidden"
+                   id="editFoodId">
+
+            <input type="text"
+                   id="editFoodName"
+                   placeholder="Food Name">
+
+            <input type="number"
+                   id="editCalories"
+                   placeholder="Calories">
+
+            <input type="number"
+                   id="editProtein"
+                   placeholder="Protein">
+
+            <input type="number"
+                   id="editCarbs"
+                   placeholder="Carbs">
+
+            <input type="number"
+                   id="editFat"
+                   placeholder="Fat">
+
+            <button onclick="updateFood()">
+
+                Update
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- DELETE MODAL -->
+
+    <div id="deleteModal"
+         class="modal">
+
+        <div class="modal-content">
+
+            <h2>Delete Food</h2>
+
+            <p>
+
+                Are you sure you want
+                to delete this food?
+
+            </p>
+
+            <input type="hidden"
+                   id="deleteFoodId">
+
+            <div class="delete-actions">
+
+                <button class="cancel-btn"
+                        onclick="closeDeleteModal()">
+
+                    Cancel
+
+                </button>
+
+                <button class="delete-confirm-btn"
+                        onclick="confirmDeleteFood()">
+
+                    Delete
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="../js/common.js"></script>
+    <script src="../js/foods.js"></script>
+
+</body>
+
+</html>

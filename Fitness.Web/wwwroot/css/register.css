@@ -1,0 +1,287 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient( rgba(255,255,255,0.9), rgba(255,255,255,0.9) ), url("https://www.transparenttextures.com/patterns/cubes.png");
+    background-color: #edf7ed;
+    position: relative;
+}
+
+/* GREEN BLOBS */
+
+.blob-top {
+    position: absolute;
+    top: -150px;
+    left: -120px;
+    width: 450px;
+    height: 450px;
+    background: #b7e8b8;
+    border-radius: 50%;
+    filter: blur(10px);
+    animation: floatBlob 6s ease-in-out infinite;
+}
+
+.blob-bottom {
+    position: absolute;
+    bottom: -150px;
+    right: -120px;
+    width: 450px;
+    height: 450px;
+    background: #b7e8b8;
+    border-radius: 50%;
+    filter: blur(10px);
+    animation: floatBlob 6s ease-in-out infinite;
+}
+
+/* REGISTER CARD */
+
+.register-card {
+    width: 700px;
+    background: white;
+    border-radius: 30px;
+    padding: 45px 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    z-index: 10;
+    animation: fadeIn 0.8s ease;
+}
+
+/* LOGO */
+
+.logo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+    .logo .material-icons {
+        font-size: 70px;
+        color: #4CAF50;
+    }
+
+    .logo h1 {
+        font-size: 48px;
+        font-weight: 600;
+        margin-top: 10px;
+        color: #222;
+    }
+
+    .logo p {
+        color: #777;
+        margin-top: 8px;
+        font-size: 16px;
+    }
+
+/*  FORM GRID */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* INPUT GROUP*/
+
+.input-group {
+    position: relative;
+}
+
+    /* INPUT + SELECT */
+
+    .input-group input,
+    .input-group select {
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #ddd;
+        padding: 12px 45px 12px 45px;
+        font-size: 16px;
+        outline: none;
+        font-family: 'Poppins', sans-serif;
+        background: transparent;
+        transition: 0.3s;
+    }
+
+        /* FOCUS */
+
+        .input-group input:focus,
+        .input-group select:focus {
+            border-bottom: 2px solid #4CAF50;
+        }
+
+    /* LEFT ICON */
+
+    .input-group > .material-icons:not(.toggle-password) {
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        color: #999;
+    }
+
+    /* LABEL */
+
+    .input-group label {
+        position: absolute;
+        left: 45px;
+        top: 12px;
+        color: #999;
+        font-size: 16px;
+        pointer-events: none;
+        transition: 0.3s;
+    }
+
+    /* FLOATING LABEL */
+
+    .input-group input:focus + label,
+    .input-group input:valid + label {
+        top: -10px;
+        left: 40px;
+        font-size: 13px;
+        color: #4CAF50;
+        background: white;
+        padding: 0 5px;
+    }
+
+    /* SELECT */
+
+    .input-group select {
+        color: #999;
+        appearance: none;
+        cursor: pointer;
+    }
+
+        .input-group select:valid {
+            color: #222;
+        }
+
+/* PASSWORD TOGGLE */
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    color: #999;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+}
+
+    .toggle-password:hover {
+        color: #4CAF50;
+    }
+
+/* BUTTON*/
+
+.register-btn {
+    width: 100%;
+    height: 52px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 35px;
+    background: #49c34d;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+    .register-btn:hover {
+        background: #3cab40;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(76,175,80,0.3);
+    }
+
+/* LOGIN LINK */
+
+.login-link {
+    margin-top: 25px;
+    text-align: center;
+    color: #666;
+    font-size: 15px;
+}
+
+    .login-link a {
+        text-decoration: none;
+        color: #4CAF50;
+        font-weight: 600;
+    }
+
+/* MESSAGE */
+
+#messageBox {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    display: none;
+}
+
+.success {
+    color: #2e7d32;
+}
+
+.error {
+    color: #d32f2f;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatBlob {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .register-card {
+        width: 90%;
+        padding: 35px 25px;
+    }
+
+    .logo h1 {
+        font-size: 38px;
+    }
+
+    .logo .material-icons {
+        font-size: 55px;
+    }
+}

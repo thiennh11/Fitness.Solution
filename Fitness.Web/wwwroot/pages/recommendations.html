@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Fitness Recommendations</title>
+
+    <!-- FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- ICON -->
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="../css/recommendations.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div id="sidebar"
+         class="sidebar">
+
+    </div>
+
+    <!-- MAIN -->
+
+    <div class="main-content">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-header">
+
+            <h1>
+
+                <span class="material-icons">
+                    restaurant_menu
+                </span>
+
+                Fitness Recommendations
+
+            </h1>
+
+            <p class="page-subtitle">
+
+                Gợi ý thực phẩm và bài tập
+                dựa trên BMI và mục tiêu của bạn
+
+            </p>
+
+        </div>
+
+        <!-- BMI SUMMARY -->
+
+        <div class="bmi-summary">
+
+            <!-- BMI -->
+
+            <div class="bmi-box">
+
+                <span class="material-icons">
+                    monitor_weight
+                </span>
+
+                <div>
+
+                    <p class="bmi-label">
+
+                        Chỉ số BMI của bạn
+
+                    </p>
+
+                    <p class="bmi-value"
+                       id="bmiValue">
+
+                        Loading...
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- STATUS -->
+
+            <div class="bmi-box">
+
+                <span class="material-icons">
+                    favorite
+                </span>
+
+                <div>
+
+                    <p class="bmi-label">
+
+                        Tình trạng
+
+                    </p>
+
+                    <p class="bmi-status"
+                       id="bmiStatus">
+
+                        Loading...
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- GOAL -->
+
+        <div class="goal-section">
+
+            <h2>
+
+                Chọn mục tiêu của bạn
+
+            </h2>
+
+            <div class="goal-buttons">
+
+                <!-- LOSE WEIGHT -->
+
+                <button class="goal-btn active"
+                        onclick="selectGoal('LoseWeight', this)">
+
+                    <span class="goal-icon">
+                        🔥
+                    </span>
+
+                    <span class="goal-label">
+                        Lose Weight
+                    </span>
+
+                    <span class="goal-desc">
+                        Giảm cân
+                    </span>
+
+                </button>
+
+                <!-- MAINTAIN -->
+
+                <button class="goal-btn"
+                        onclick="selectGoal('Maintain', this)">
+
+                    <span class="goal-icon">
+                        ⚖️
+                    </span>
+
+                    <span class="goal-label">
+                        Maintain
+                    </span>
+
+                    <span class="goal-desc">
+                        Duy trì
+                    </span>
+
+                </button>
+
+                <!-- GAIN MUSCLE -->
+
+                <button class="goal-btn"
+                        onclick="selectGoal('GainMuscle', this)">
+
+                    <span class="goal-icon">
+                        💪
+                    </span>
+
+                    <span class="goal-label">
+                        Gain Muscle
+                    </span>
+
+                    <span class="goal-desc">
+                        Tăng cơ
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- REASON -->
+
+        <p id="recommendReason"
+           class="recommend-reason"
+           style="display:none;">
+
+        </p>
+
+        <!-- FOOD SECTION -->
+
+        <div class="section-title">
+
+            <span class="material-icons">
+                restaurant
+            </span>
+
+            <h2>
+
+                Thực phẩm được gợi ý
+
+            </h2>
+
+        </div>
+
+        <div id="recommendationList"
+             class="recommendation-list">
+
+            <p class="loading-text">
+
+                Loading...
+
+            </p>
+
+        </div>
+
+        <!-- EXERCISE SECTION -->
+
+        <div class="section-title"
+             style="margin-top:40px;">
+
+            <span class="material-icons">
+                fitness_center
+            </span>
+
+            <h2>
+
+                Bài tập được gợi ý
+
+            </h2>
+
+        </div>
+
+        <div id="exerciseList"
+             class="recommendation-list">
+
+            <p class="loading-text">
+
+                Loading...
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+
+    <script src="../js/common.js"></script>
+
+    <script src="../js/recommendations.js"></script>
+
+</body>
+
+</html>

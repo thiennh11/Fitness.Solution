@@ -1,0 +1,6 @@
+@Fitness.Web_HostAddress = http://localhost:5102
+
+GET {{Fitness.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

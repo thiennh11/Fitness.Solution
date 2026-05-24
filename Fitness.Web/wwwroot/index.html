@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Fitness Login</title>
+    <link rel="icon"
+          type="image/svg+xml"
+          href="data:image/svg+xml,
+      %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E
+      %3Ctext y='20' font-size='20'%3E🏋️%3C/text%3E
+      %3C/svg%3E">
+
+    <!-- FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- ICON -->
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+
+    <div class="blob-top"></div>
+
+    <div class="blob-bottom"></div>
+
+    <!-- LOGIN -->
+
+    <div class="login-card">
+
+        <div class="logo">
+
+            <span class="material-icons">
+                fitness_center
+            </span>
+
+            <h1>Fitness App</h1>
+
+            <p>Login to continue</p>
+
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="input-group">
+
+            <span class="material-icons input-icon">
+                person
+            </span>
+
+            <input type="email"
+                   id="email"
+                   required>
+
+            <label>Email</label>
+
+        </div>
+
+        <!-- PASSWORD -->
+
+        <div class="input-group">
+
+            <span class="material-icons input-icon">
+                lock
+            </span>
+
+            <input type="password"
+                   id="password"
+                   required>
+
+            <label>Password</label>
+
+            <span class="material-icons toggle-password"
+                  onclick="togglePassword()">
+
+                visibility
+
+            </span>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <button class="login-btn"
+                onclick="login()">
+
+            LOGIN
+
+        </button>
+        <div id="message"></div>
+
+        <!-- OR -->
+
+        <div class="or-line">
+
+            <span>or</span>
+
+        </div>
+
+        <!-- REGISTER -->
+
+        <div class="register">
+
+            <p>
+                Don't have an account?
+
+                <a href="pages/register.html">
+                    Register
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

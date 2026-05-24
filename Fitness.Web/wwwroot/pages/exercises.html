@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Exercises</title>
+
+    <!-- FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- ICON -->
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="../css/exercises.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <div id="sidebar" class="sidebar"></div>
+
+    <!-- MAIN -->
+
+    <div class="main-content">
+
+        <!-- TOPBAR -->
+
+        <div class="topbar">
+
+            <h1>Exercises</h1>
+
+            <div id="messageBox"></div>
+
+            <button id="addExerciseBtn"
+                    onclick="openAddModal()">
+
+                Add Exercise
+
+            </button>
+
+        </div>
+
+        <div class="search-box">
+
+            <span class="material-icons">
+                search
+            </span>
+
+            <input type="text"
+                   id="exerciseSearch"
+                   placeholder="Search exercise..."
+                   onkeyup="searchExercises()">
+
+        </div>
+
+        <!-- TABLE -->
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Name</th>
+
+                        <th>
+                            Calories Burn Per Minute
+                        </th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="exerciseTableBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- MODAL -->
+
+    <div id="exerciseModal"
+         class="modal">
+
+        <div class="modal-content">
+
+            <h2>Add Exercise</h2>
+
+            <input type="text"
+                   id="exerciseName"
+                   placeholder="Exercise Name">
+
+            <input type="number"
+                   id="exerciseCalories"
+                   placeholder="Calories Burn Per Minute">
+
+            <div class="modal-buttons">
+
+                <button onclick="addExercise()">
+
+                    Save
+
+                </button>
+
+                <button class="cancel-btn"
+                        onclick="closeModal()">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="../js/common.js"></script>
+    <script src="../js/exercises.js"></script>
+
+</body>
+
+</html>

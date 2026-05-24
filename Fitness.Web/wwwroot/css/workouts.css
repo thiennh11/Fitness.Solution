@@ -1,0 +1,411 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    background: #f4f7fb;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: white;
+    padding: 30px 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+    .logo .material-icons {
+        font-size: 40px;
+        color: #4CAF50;
+    }
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    color: #555;
+}
+
+    .sidebar li:hover {
+        background: #f0f5f0;
+        color: #4CAF50;
+    }
+
+    .sidebar li.active {
+        background: #4CAF50;
+        color: white;
+    }
+
+        .sidebar li.active .material-icons {
+            color: white;
+        }
+
+/* MAIN */
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* TOPBAR */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+    .topbar button {
+        border: none;
+        background: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        transition: background 0.2s, transform 0.1s;
+    }
+
+        .topbar button:hover {
+            background: #43a047;
+        }
+
+        .topbar button:active {
+            transform: scale(0.97);
+        }
+
+/* TABLE */
+
+
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 15px;
+    background: #f7f7f7;
+    color: #888;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 14px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: #fafafa;
+}
+
+/* ACTION BUTTONS IN TABLE */
+
+.action-btn {
+    padding: 7px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.1s;
+    margin-right: 6px;
+}
+
+    .action-btn:active {
+        transform: scale(0.96);
+    }
+
+.edit-btn {
+    background: #e8f5e9;
+    color: #4CAF50;
+}
+
+    .edit-btn:hover {
+        background: #c8e6c9;
+    }
+
+.delete-btn {
+    background: #fdecea;
+    color: #e53935;
+}
+
+    .delete-btn:hover {
+        background: #ffcdd2;
+    }
+
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    animation: modalIn 0.2s ease;
+}
+
+@keyframes modalIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(-16px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* MODAL HEADER */
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+    .modal-header h2 {
+        font-size: 18px;
+        color: #222;
+    }
+
+.close-btn {
+    cursor: pointer;
+    color: #aaa;
+    font-size: 24px;
+    transition: 0.2s;
+    user-select: none;
+}
+
+    .close-btn:hover {
+        color: #555;
+    }
+
+/* INPUTS */
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: 0.2s;
+}
+
+    .modal-content input:focus,
+    .modal-content select:focus {
+        border-color: #4CAF50;
+    }
+
+/* WORKOUT ITEM */
+
+.workout-item {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 18px;
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ADD BUTTON */
+
+.add-exercise-btn {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    border: 2px dashed #4CAF50;
+    background: #f6fff6;
+    color: #4CAF50;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+    .add-exercise-btn:hover {
+        background: #4CAF50;
+        color: white;
+    }
+
+/* ACTIONS */
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+    .modal-actions button {
+        flex: 1;
+        height: 50px;
+        border: none;
+        border-radius: 14px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        transition: 0.2s;
+    }
+
+        .modal-actions button:active {
+            transform: scale(0.97);
+        }
+
+.btn-cancel {
+    background: #f0f0f0;
+    color: #555;
+}
+
+    .btn-cancel:hover {
+        background: #e0e0e0;
+    }
+
+.btn-save {
+    background: #4CAF50;
+    color: white;
+}
+
+    .btn-save:hover {
+        background: #43a047;
+    }
+
+.btn-delete {
+    background: #e53935;
+    color: white;
+}
+
+    .btn-delete:hover {
+        background: #c62828;
+    }
+
+/* DELETE MODAL */
+
+.modal-content p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px) {
+
+    .modal-content {
+        width: 92%;
+        padding: 22px;
+    }
+
+    .workout-item {
+        padding: 14px;
+    }
+}
+.workout-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+    .workout-item-header span {
+        font-size: 14px;
+        font-weight: 600;
+        color: #444;
+    }
+
+.remove-item-btn {
+    border: none;
+    background: #fdecea;
+    color: #e53935;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.2s;
+}
+
+    .remove-item-btn:hover {
+        background: #ffcdd2;
+    }
+button {
+    font-family: 'Poppins', sans-serif;
+}
+
+.remove-item-btn,
+.add-exercise-btn {
+    outline: none;
+    appearance: none;
+}
