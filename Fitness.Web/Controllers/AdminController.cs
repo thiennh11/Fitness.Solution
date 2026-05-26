@@ -45,6 +45,7 @@ namespace Fitness.API.Controllers
         public async Task<IActionResult> GetAllUsers()
         {
             var users = await _context.Users
+                .Where(u => u.Role != "Admin")  // thêm dòng này
                 .Select(u => new
                 {
                     u.Id,
