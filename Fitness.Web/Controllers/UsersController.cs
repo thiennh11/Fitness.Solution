@@ -17,17 +17,6 @@ namespace Fitness.API.Controllers
             _repository = repository;
         }
 
-        [HttpGet]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetAll()
-        {
-            var users = await _repository.GetAllAsync();
-            var normalUsers = users
-                .Where(u => u.Role != "Admin")
-                .ToList();
-            return Ok(normalUsers);
-        }
-
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
@@ -90,18 +79,6 @@ namespace Fitness.API.Controllers
                 Status = status
             };
             return Ok(result);
-        }
-
-        [Authorize(Roles = "Admin")]
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
-        {
-            var user = await _repository.GetByIdAsync(id);
-            if (user == null)
-                return NotFound();
-
-            await _repository.DeleteAsync(user);
-            return NoContent();
         }
     }
 }

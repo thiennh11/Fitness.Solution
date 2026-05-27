@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token');
+    const role = params.get('role');
+    const fullName = params.get('fullName');
+
+    if (token) {
+        localStorage.setItem('token', token);
+        localStorage.setItem('role', role);
+        localStorage.setItem('fullName', fullName);
+
+        if (role === 'Admin') {
+            window.location.href = '/pages/admin.html';
+        } else {
+            window.location.href = '/pages/dashboard.html';
+        }
+    } else {
+        window.location.href = '/index.html';
+    }
+    </script>
+</body>
+</html>
